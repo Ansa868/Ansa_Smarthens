@@ -1,64 +1,61 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-string findZodoicSign(int date,string month);
+string findZodoicSign(int date, string month);
 
-int main(){
-    int d;
-    string m;
-    cout<<"Enter the date=";
-    cin>>d;
-    cout<<"Enter the month=";
-    cin>>m;
-    findZodoicSign(d,m);
+int main()
+{
+    int date;
+    string month;
+    cout << "Enter the date=";
+    cin >> date;
+    cout << "Enter the month=";
+    cin >> month;
+    findZodoicSign(date, month);
 
     return 0;
 }
-string findZodoicSign(int date,string month){
-    if (((date>=21)&&(month=="march")) || ((date<=19)&&(month=="april")))
+string findZodoicSign(int date, string month)
+{
+    if (((date >= 21) && (month == "march")) || ((date <= 19) && (month == "april")))
     {
-        return"Aries";
+        cout << "Aries";
     }
 
-    else if (((date>=20)&&(month=="april")) || ((date<=20)&&(month=="may")))
+    else if (((date >= 20) && (month == "april")) || ((date <= 20) && (month == "may")))
     {
-        return"Taurus";
+        cout << "Taurus";
     }
-    else if (((date>=21)&&(month=="may"))||((date<=20)&&(month=="june")))
+    else if (((date >= 21) && (month == "may")) || ((date <= 20) && (month == "june")))
     {
-        return "Gemini";
+        cout << "Gemini";
     }
-    else if (((date>=21)&&(month=="june"))||((date<=22)&&(month=="july")))
+    else if (((date >= 21) && (month == "june")) || ((date <= 22) && (month == "july")))
     {
-        return "cancer";
+        cout << "cancer";
     }
-    else if (((date>=23)&&(month=="july"))||((date<=22)&&(month=="august")))
+    else if (((date >= 23) && (month == "july")) || ((date <= 22) && (month == "august")))
     {
-        return "leo";
+        cout << "leo";
     }
-    else if (((date>=23)&&(month=="august"))||((date<=22)&&(month=="september")))
+    else if (((date >= 23) && (month == "august")) || ((date <= 22) && (month == "september")))
     {
-        return "virgo";
+        cout << "virgo";
     }
-    else if (((date>=23)&&(month=="september"))||((date<=22)&&(month=="october")))
+    else if (((date >= 23) && (month == "september")) || ((date <= 22) && (month == "october")))
     {
-        return "libra";
+        cout << "libra";
     }
-    else if (((date>=23)&&(month=="october"))||((date<=21)&&(month=="november")))
+    else if (((date >= 23) && (month == "october")) || ((date <= 21) && (month == "november")))
     {
-        return "scorpio";
+        cout << "scorpio";
     }
-    else if (((date>=22)&&(month=="november"))||((date<=21)&&(month=="december")))
+    else if (((date >= 22) && (month == "november")) || ((date <= 21) && (month == "december")))
     {
-        return "sagittarius";
+        cout << "sagittarius";
     }
-    else if (((date>=22)&&(month=="december"))||((date<=22)&&(month=="january")))
+    else if (((date >= 22) && (month == "december")) || ((date <= 22) && (month == "january")))
     {
-        return "capricon";
+        cout << "capricon";
     }
-
-    
-    
-    
-    
 }
