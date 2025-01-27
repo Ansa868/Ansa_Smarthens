@@ -3,15 +3,15 @@ using namespace std;
 
 int fruitprice(string fruit,string day,int q);
 int main(){
-    string f,d;
+    string fruit,day;
     int q;
     cout<<"Enter the name of fruit=";
-    cin>>f;
+    cin>>fruit;
     cout<<"Enter the day of week=";
-    cin>>d;
+    cin>>day;
     cout<<"Enter the quantity=";
     cin>>q;
-    fruitprice(f,d,q);
+    fruitprice(fruit,day,q);
     return 0;
 }
 
