@@ -1,6 +1,5 @@
 #include <iostream>
 #include <conio.h>
-#include<string>
 
 using namespace std;
 
@@ -8,11 +7,8 @@ int totalusers = 0;
 string email[100];
 string password[100];
 string items[100];
-string name[100];
-string address[100];
-int r=0;
 int number;
-/*******************Functions added**************************/
+
 void selections();
 void sign_up(string useremail, string userpassword);
 bool user_already_exsist(string useremail);
@@ -23,8 +19,6 @@ void add_manu();
 void view_manu();
 void select_manu();
 void rate();
-void add_restaurent_details();
-void view_restaurant_details();
 
 int main()
 {
@@ -56,7 +50,6 @@ int main()
             else
             {
                 sign_up(email, password);
-               // view_restaurant_details();
                 customer_features();
             }
 
@@ -77,6 +70,7 @@ int main()
             else
             {
                 signin(email, password);
+                customer_features();
             }
 
             break;
@@ -130,7 +124,6 @@ bool signin(string useremail, string userpassword)
             if (password[i] == userpassword)
             {
                 cout << "Hello " << useremail << endl;
-                customer_features();
                 return true;
             }
         }
@@ -138,7 +131,16 @@ bool signin(string useremail, string userpassword)
     cout << "Invalid username or password\n";
     return false;
 }
+
 // ***************Functionality work ****************//
+
+void add_restaurent_details()
+{
+    string r;
+    cout << "Enter you restaurent name=";
+    cin >> r;
+}
+
 void add_manu()
 {
     // string items[100];
@@ -173,24 +175,14 @@ void select_manu()
     {
         cout << "Manu is empty" << endl;
     }
-    else if (number>=1)
-    {
-        for (int i = 0; i < number; i++)
-    {
-            cout <<i+1<<"."<< items[i] << endl;
-    }
 
-    int choice;
-    cout<<"**Select items by number**"<<endl;
-    cin>>choice;
-    if(choice<1 || choice>number)
+    for (int i = 0; i < number; i++)
     {
-        cout<<"Enter valid choice!"<<endl;
+        for (int j = 1; j < i; j++)
+        {
+            cout << j << items[i] << endl;
+        }
     }
-    else{
-        cout<<"You selected: "<<items[choice-1]<<endl;
-    }
-}
 }
 
 void rate()
@@ -232,30 +224,8 @@ void rate()
         } while (c > 5 || c < 1);
         cout << "Thanks for your feedback!" << endl;
     }
-    else if (ch=="N" || ch=="n")
-    {
-        return;
-    }
-    
 }
 
-void add_restaurent_details()
-{
-    cin.ignore();
-    string name,address;
-    cout<<"Restaurent Name=";
-    getline(cin,name);
-    cout<<"Address=";
-    getline(cin,address);
-    r++;
-}
-//void view_restaurant_details()
-{
-    cout<<"Restaurent Name=";
-    cout<<name<<endl;
-    cout<<"Address=";
-    cout<<address;
-}
 void admin_features()
 {
     int c;
@@ -264,22 +234,22 @@ void admin_features()
     cout << "3.View history" << endl;
     cout << "4.EXIT" << endl;
 
+    cout << "Enter your choice=";
     do
     {
-        cout << "Enter your choice=";
         cin >> c;
 
         switch (c)
         {
         case 1:
-          add_restaurent_details();
+        //Restaurent details
             break;
         case 2:
             add_manu();
             break;
 
         case 3:
-        //history link with customer //
+        //history
             break;
 
         case 4:
@@ -290,7 +260,7 @@ void admin_features()
             printf("Invalid Enter again(1_4)=");
             break;
         }
-    } while (c != 4);
+    } while (c > 4 || c < 1);
 }
 
 void customer_features()
@@ -301,10 +271,10 @@ void customer_features()
     cout << "3.Rate restaurent" << endl;
     cout << "4.EXIT" << endl;
 
+    cout << "Enter your choice=";
+    cin >> c;
     do
     {
-        cout << "Enter your choice=";
-        cin >> c;
         switch (c)
         {
         case 1:
@@ -312,7 +282,7 @@ void customer_features()
             break;
 
         case 2:
-            select_manu();
+           // select_manu();
             break;
         case 3:
             rate();
@@ -322,8 +292,8 @@ void customer_features()
             break;
 
         default:
-            printf("Invalid! ");
+            printf("Invalid");
             break;
         }
-    } while (c!= 4);
+    } while (c > 4 || c < 1);
 }
